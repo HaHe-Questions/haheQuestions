@@ -15,7 +15,7 @@ public class KysymysController {
 	@ResponseBody
 	@RequestMapping("/index")
 	public String hello() {
-		return "hello";
+		return "kokeilu";
 	
 	}
 	
