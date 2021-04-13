@@ -1,9 +1,11 @@
 package hh.fi.swd22.haheQuestions.domain;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Kysely {
@@ -13,6 +15,8 @@ public class Kysely {
 	private Long kysely_id;
 	
 	private String nimi;
+	
+	@OneToMany(cascade = CascadeType.ALL)
 
 	// konstruktorit
 	public Kysely(String nimi) {
