@@ -6,13 +6,14 @@
 </head>
 <body>
 <h1>Kyselyt</h1>
-<table class="table table-striped">
-<tbody>
-<tr th:each="kysely:${kyselyt}">
-<td th:text="${kysely.nimi}"></td>
-
+<table>
+<tr>
+	<th>>Nimi</th>
+	</tr>
+	<tr th:each="kysely:${kyselyt}">
+	<td th:text="${kysely.nimi}"></td>
 </tr>
-</tbody>
 </table>
 
 </body>
+</html>

@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -22,9 +23,23 @@ public class KyselyController {
 	@Autowired
 	private KysymysRepository kysymysrepository;
 	
+	@RequestMapping(value="/kyselylista")
+	public String kyselyLista(Model model) {
+		model.addAttribute("kyselyt", kyselyrepository.findAll());
+		return "kysely";
+	}
+	
 	@RequestMapping(value="/kyselyt", method= RequestMethod.GET)
 	public @ResponseBody List<Kysely> getKyselytRest() {
 		return (List<Kysely>) kyselyrepository.findAll();
 	}
+	
+	@RequestMapping(value="/uusikysely")
+	public String uusiKysely(Model model) {
+		model.addAttribute("kysely", new Kysely());
+		model.addAttribute("kysymykset", kysymysrepository.findAll());
+		return "uusikysely";
+	}
+	
 
 }

@@ -30,7 +30,7 @@ public class HaheQuestionsApplication {
 			log.info("Testi");
 			kyselyrepository.save(new Kysely("testi"));
 			
-			// kysymysrepository.save(new Kysymys("kysymysteksti", kyselyrepository.findByNimi("testi").get(0)));
+			kysymysrepository.save(new Kysymys("kysymysteksti", kyselyrepository.findByNimi("testi").get(0)));
 		};
 	}
 }
