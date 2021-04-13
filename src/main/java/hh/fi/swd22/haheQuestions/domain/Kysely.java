@@ -16,7 +16,7 @@ public class Kysely {
 	
 	private String nimi;
 	
-	@OneToMany(cascade = CascadeType.ALL)
+	// @OneToMany(cascade = CascadeType.ALL)
 
 	// konstruktorit
 	public Kysely(String nimi) {
