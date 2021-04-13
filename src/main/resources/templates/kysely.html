@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Kysely</title>
+<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+</head>
+<body>
+<h1>Kyselyt</h1>
+
+<table class="table table-striped">
+<tbody>
+<tr th:each="kysely:${kyselyt}">
+<td th:text="${kysely.nimi}"></td>
+
+</tr>
+</tbody>
+</table>
+
+</body>
