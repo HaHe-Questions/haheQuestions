@@ -12,6 +12,9 @@
 	</tr>
 	<tr th:each="kysely:${kyselyt}">
 	<td th:text="${kysely.nimi}"></td>
+
+	<!--  <tr th:each="kysymys:${kysymykset}">-->
+	<td th:text="${kysely.kysymys.kysymysteksti}"></td>
 </tr>
 </table>
 

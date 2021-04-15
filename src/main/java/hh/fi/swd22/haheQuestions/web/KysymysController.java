@@ -19,5 +19,5 @@ public class KysymysController {
 	public String hello() {
 		return "testitesti";
 	}
-	
+
 }

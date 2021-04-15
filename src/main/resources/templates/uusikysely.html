@@ -11,6 +11,20 @@
 	<label for="nimi">Kyselyn nimi</label>
 	<input type="text" id="nimi" th:field="*{nimi}" />
 	</form>
+<h2>Kysymykset</h2>
+	<form th:object="${kysymys}" th:action="@{tallenna}" action="#" method="post">
+	<label for="kysymysteksti">Kysymys 1</label>
+	<input type="text" id="kysymysteksti" th:field="*{kysymysteksti}" /><br>
+	<label for="kysymysteksti">Kysymys 2</label>
+	<input type="text" id="kysymysteksti" th:field="*{kysymysteksti}" /><br>
+	<label for="kysymysteksti">Kysymys 3</label>
+	<input type="text" id="kysymysteksti" th:field="*{kysymysteksti}" /><br>
+	<label for="kysymysteksti">Kysymys 4</label>
+	<input type="text" id="kysymysteksti" th:field="*{kysymysteksti}" /><br>
+	<label for="kysymysteksti">Kysymys 5</label>
+	<input type="text" id="kysymysteksti" th:field="*{kysymysteksti}" />
+	<input type="submit" value="Tallenna"></input>
+	</form>
 </div>
 </body>
 </html>
