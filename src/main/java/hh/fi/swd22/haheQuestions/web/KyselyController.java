@@ -36,6 +36,7 @@ public class KyselyController {
 		return (List<Kysely>) kyselyrepository.findAll();
 	}
 	
+	// Lisää uusi kysely
 	@RequestMapping(value="/uusikysely")
 	public String uusiKysely(Model model) {
 		model.addAttribute("kysely", new Kysely());
@@ -43,8 +44,10 @@ public class KyselyController {
 		return "uusikysely";
 	}
 	
+	// Tallenna uusi kysely
 	@RequestMapping(value="/tallenna", method = RequestMethod.POST)
-	public String tallenna(Kysymys kysymys) {
+	public String tallenna(Kysely kysely, Kysymys kysymys) {
+		kyselyrepository.save(kysely);
 		kysymysrepository.save(kysymys);
 		return "redirect:kyselylista";
 	}

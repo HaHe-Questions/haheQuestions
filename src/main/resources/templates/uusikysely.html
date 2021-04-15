@@ -7,7 +7,7 @@
 <body>
 <h1>Kysely</h1>
 <div>
-	<form th:object="${kysely}" th:action="@{tallenna}" action="#" method="post">
+	<form th:object="${kysely}" th:action="@{/tallenna}" action="#" method="post">
 	<label for="nimi">Kyselyn nimi</label>
 	<input type="text" id="nimi" th:field="*{nimi}" />
 	</form>
@@ -24,6 +24,9 @@
 	<label for="kysymysteksti">Kysymys 5</label>
 	<input type="text" id="kysymysteksti" th:field="*{kysymysteksti}" />
 	<input type="submit" value="Tallenna"></input>
+	<button onclick="location.href='/kyselylista'" type="button">
+         Peruuta</button><br>
+	
 	</form>
 </div>
 </body>

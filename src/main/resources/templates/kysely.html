@@ -6,6 +6,10 @@
 </head>
 <body>
 	<h1>Kyselyt</h1>
+	
+	<button onclick="location.href='/uusikysely'" type="button">
+         Lisää uusi kysely</button><br>
+	
 	<!--<table>
 	  
 		<tr>
@@ -18,7 +22,7 @@
 			<td th:text="${kysymys.kysymysteksti}"></td>
 		</tr>
 	</table>-->
-	
+	<br>
 	<div th:each="kysely : ${kyselyt}">
 		<div th:text="${kysely.nimi}"></div>
 		<ul>
@@ -30,14 +34,7 @@
 
 
 
-	<!--<div th:each="classroom : ${classroomList}">
-		<div>"${classroom.name}"</div>
-		<ul>
-			<div th:each="student : ${classroom.studentList}">
-				<li>"${student.name}"</li>
-			</div>
-		</ul>
-	</div>-->
+
 
 </body>
 </html>
