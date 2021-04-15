@@ -28,9 +28,15 @@ public class HaheQuestionsApplication {
 	public CommandLineRunner kysymysDemo(KyselyRepository kyselyrepository, KysymysRepository kysymysrepository) {
 		return (args) -> {
 			log.info("Testi");
-			kyselyrepository.save(new Kysely("testi"));
+			kyselyrepository.save(new Kysely("kevätkysely"));
 			
-			kysymysrepository.save(new Kysymys("kysymysteksti", kyselyrepository.findByNimi("testi").get(0)));
+			kysymysrepository.save(new Kysymys("Mitä olet mieltä keväästä?", kyselyrepository.findByNimi("kevätkysely").get(0)));
+			kysymysrepository.save(new Kysymys("Mitä olet mieltä talvesta?", kyselyrepository.findByNimi("kevätkysely").get(0)));
+			
+			kyselyrepository.save(new Kysely("talvikysely"));
+			
+			kysymysrepository.save(new Kysymys("Mitä olet mieltä keväästä?", kyselyrepository.findByNimi("talvikysely").get(0)));
+			kysymysrepository.save(new Kysymys("Mitä olet mieltä talvesta?", kyselyrepository.findByNimi("talvikysely").get(0)));
 		};
 	}
 }

@@ -27,7 +27,7 @@ public class KyselyController {
 	@RequestMapping(value="/kyselylista")
 	public String kyselyLista(Model model) {
 		model.addAttribute("kyselyt", kyselyrepository.findAll());
-		model.addAttribute("kysymykset", kysymysrepository.findAll());
+		// model.addAttribute("kysymykset", kysymysrepository.findAll());
 		return "kysely";
 	}
 	

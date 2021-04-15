@@ -5,18 +5,39 @@
 <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
 </head>
 <body>
-<h1>Kyselyt</h1>
-<table>
-<tr>
-	<th>>Nimi</th>
-	</tr>
-	<tr th:each="kysely:${kyselyt}">
-	<td th:text="${kysely.nimi}"></td>
+	<h1>Kyselyt</h1>
+	<!--<table>
+	  
+		<tr>
+			<th>Nimi</th>
+		</tr>
+		<tr th:each="kysely:${kyselyt}">
+			<td th:text="${kysely.nimi}"></td>
+		</tr>
+		<tr th:each="kysymys:${kysely.kysymykset}">
+			<td th:text="${kysymys.kysymysteksti}"></td>
+		</tr>
+	</table>-->
+	
+	<div th:each="kysely : ${kyselyt}">
+		<div th:text="${kysely.nimi}"></div>
+		<ul>
+			<div th:each="kysymys : ${kysely.kysymykset}">
+				<li th:text="${kysymys.kysymysteksti}"></li>
+			</div>
+		</ul>
+	</div>
 
-	<!--  <tr th:each="kysymys:${kysymykset}">-->
-	<td th:text="${kysely.kysymys.kysymysteksti}"></td>
-</tr>
-</table>
+
+
+	<!--<div th:each="classroom : ${classroomList}">
+		<div>"${classroom.name}"</div>
+		<ul>
+			<div th:each="student : ${classroom.studentList}">
+				<li>"${student.name}"</li>
+			</div>
+		</ul>
+	</div>-->
 
 </body>
 </html>
