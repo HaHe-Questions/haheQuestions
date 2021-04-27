@@ -46,6 +46,8 @@ public class KyselyController {
     public @ResponseBody Optional<Kysely> findKyselyRest(@PathVariable("id") Long kId) {	
     	return kyselyrepository.findById(kId);
     } 
+    
+    
 	
 	// Lisää uusi kysely
 	@RequestMapping(value="/uusikysely")
