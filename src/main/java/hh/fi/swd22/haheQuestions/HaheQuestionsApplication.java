@@ -31,11 +31,11 @@ public class HaheQuestionsApplication {
 			kyselyrepository.save(new Kysely("kevätkysely"));
 			
 			kysymysrepository.save(new Kysymys("Mitä olet mieltä keväästä?", kyselyrepository.findByNimi("kevätkysely").get(0)));
-			kysymysrepository.save(new Kysymys("Mitä olet mieltä talvesta?", kyselyrepository.findByNimi("kevätkysely").get(0)));
+			kysymysrepository.save(new Kysymys("Onko lämmin?", kyselyrepository.findByNimi("kevätkysely").get(0)));
 			
 			kyselyrepository.save(new Kysely("talvikysely"));
 			
-			kysymysrepository.save(new Kysymys("Mitä olet mieltä keväästä?", kyselyrepository.findByNimi("talvikysely").get(0)));
+			kysymysrepository.save(new Kysymys("Onko kylmä?", kyselyrepository.findByNimi("talvikysely").get(0)));
 			kysymysrepository.save(new Kysymys("Mitä olet mieltä talvesta?", kyselyrepository.findByNimi("talvikysely").get(0)));
 		};
 	}
