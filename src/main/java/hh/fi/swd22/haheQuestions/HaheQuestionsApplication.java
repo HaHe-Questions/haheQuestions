@@ -1,8 +1,5 @@
 package hh.fi.swd22.haheQuestions;
 
-import java.util.List;
-import java.util.Optional;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -14,6 +11,8 @@ import hh.fi.swd22.haheQuestions.domain.Kysely;
 import hh.fi.swd22.haheQuestions.domain.KyselyRepository;
 import hh.fi.swd22.haheQuestions.domain.Kysymys;
 import hh.fi.swd22.haheQuestions.domain.KysymysRepository;
+import hh.fi.swd22.haheQuestions.domain.Vastaus;
+import hh.fi.swd22.haheQuestions.domain.VastausRepository;
 
 @SpringBootApplication
 public class HaheQuestionsApplication {
@@ -25,7 +24,8 @@ public class HaheQuestionsApplication {
 	}
 
 	@Bean
-	public CommandLineRunner kysymysDemo(KyselyRepository kyselyrepository, KysymysRepository kysymysrepository) {
+	public CommandLineRunner kysymysDemo(KyselyRepository kyselyrepository, KysymysRepository kysymysrepository, VastausRepository
+			vastausrepository) {
 		return (args) -> {
 			log.info("Testi");
 			kyselyrepository.save(new Kysely("kevätkysely"));
@@ -37,6 +37,10 @@ public class HaheQuestionsApplication {
 			
 			kysymysrepository.save(new Kysymys("Onko kylmä?", kyselyrepository.findByNimi("talvikysely").get(0)));
 			kysymysrepository.save(new Kysymys("Mitä olet mieltä talvesta?", kyselyrepository.findByNimi("talvikysely").get(0)));
+			
+			vastausrepository.save(new Vastaus("Kevät on kiva.", kysymysrepository.findByKysymysteksti("Mitä olet mieltä keväästä?").get(0)));
+			vastausrepository.save(new Vastaus("Ei ole kylmä.", kysymysrepository.findByKysymysteksti("Onko kylmä?").get(0)));
+			
 		};
 	}
 }

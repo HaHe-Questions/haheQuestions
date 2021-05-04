@@ -1,11 +1,15 @@
 package hh.fi.swd22.haheQuestions.domain;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -19,10 +23,13 @@ public class Kysymys {
 	
 	private String kysymysteksti;
 	@ManyToOne
+	@JsonIgnoreProperties("kysymykset")
 	@JoinColumn(name = "kysely_id")
 	private Kysely kysely;
-	@JsonIgnoreProperties("kysymykset")
-
+	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "kysymys")
+	private List<Vastaus> vastaukset;
+	
 	// konstruktorit
 	public Kysymys() {
 		super();
@@ -57,6 +64,14 @@ public class Kysymys {
 
 	public void setKysely(Kysely kysely) {
 		this.kysely = kysely;
+	}
+
+	public List<Vastaus> getVastaukset() {
+		return vastaukset;
+	}
+
+	public void setVastaukset(List<Vastaus> vastaukset) {
+		this.vastaukset = vastaukset;
 	}
 
 	// toString
