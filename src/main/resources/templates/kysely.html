@@ -27,6 +27,7 @@
 	<br>
 	<div th:each="kysely : ${kyselyt}">
 		<div th:text="${kysely.nimi}"></div>
+		<div th:text="${kysely.kysely_kuvaus}"></div>
 		<ul>
 			<div th:each="kysymys : ${kysely.kysymykset}">
 				<li th:text="${kysymys.kysymysteksti}"></li>

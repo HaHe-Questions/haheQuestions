@@ -8,8 +8,10 @@
 <h1>Kysely</h1>
 <div>
 	<form th:object="${kysely}" th:action="@{/tallennakysely}" action="#" method="post">
-	<label for="nimi">Kyselyn nimi</label>
-	<input type="text" id="nimi" th:field="*{nimi}" />
+	<p>Kyselyn nimi:</p>
+	<textarea rows="1" cols="50" id="nimi" th:field="*{nimi}" /></textarea>
+	<p>Kyselyn kuvaus:<p/>
+	<textarea rows="6" cols="50" id="kysely_kuvaus" th:field="*{kysely_kuvaus}"></textarea>
 	<input type="submit" value="Tallenna"></input>
 	<button onclick="location.href='/kyselylista'" type="button">
          Peruuta</button><br>

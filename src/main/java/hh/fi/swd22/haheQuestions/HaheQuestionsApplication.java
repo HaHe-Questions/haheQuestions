@@ -41,6 +41,31 @@ public class HaheQuestionsApplication {
 			vastausrepository.save(new Vastaus("Kevät on kiva.", kysymysrepository.findByKysymysteksti("Mitä olet mieltä keväästä?").get(0)));
 			vastausrepository.save(new Vastaus("Ei ole kylmä.", kysymysrepository.findByKysymysteksti("Onko kylmä?").get(0)));
 			
+			vastausrepository.save(new Vastaus("Kesä on parempi.", kysymysrepository.findByKysymysteksti("Mitä olet mieltä keväästä?").get(0)));
+			vastausrepository.save(new Vastaus("On kylmä.", kysymysrepository.findByKysymysteksti("Onko kylmä?").get(0)));
+			
+			kyselyrepository.save(new Kysely("mielipidekysely etäopiskelemisesta"));
+			
+			kysymysrepository.save(new Kysymys("Koetko etäopiskelun helppona?", kyselyrepository.findByNimi("mielipidekysely etäopiskelemisesta").get(0)));
+			kysymysrepository.save(new Kysymys("Minkä koet olevan suurin haaste etäopiskelemisessa?", kyselyrepository.findByNimi("mielipidekysely etäopiskelemisesta").get(0)));
+			kysymysrepository.save(new Kysymys("Oletko tyytyväinen koulun tarjoamaan etäopetuksen laatuun?", kyselyrepository.findByNimi("mielipidekysely etäopiskelemisesta").get(0)));
+			kysymysrepository.save(new Kysymys("Haluaisitko jatkaa etäopiskelemisesta vielä jatkossakin?", kyselyrepository.findByNimi("mielipidekysely etäopiskelemisesta").get(0)));
+			
+			vastausrepository.save(new Vastaus("En koe etäopiskelua helppona.", kysymysrepository.findByKysymysteksti("Koetko etäopiskelun helppona?").get(0)));
+			vastausrepository.save(new Vastaus("Koen etäopiskelun helpoksi.", kysymysrepository.findByKysymysteksti("Koetko etäopiskelun helppona?").get(0)));
+			
+			vastausrepository.save(new Vastaus("Koen suurimmaksi haasteeksi etäopiskelussa motivaation puutteen", kysymysrepository.findByKysymysteksti("Minkä koet olevan suurin haaste etäopiskelemisessa?").get(0)));
+			vastausrepository.save(new Vastaus("Koen suurimmaksi haasteeksi etäopiskelussa kontaktien vähäisyyden", kysymysrepository.findByKysymysteksti("Minkä koet olevan suurin haaste etäopiskelemisessa?").get(0)));
+			vastausrepository.save(new Vastaus("Koen suurimmaksi haasteeksi etäopiskelussa vertaistuen puutteen", kysymysrepository.findByKysymysteksti("Minkä koet olevan suurin haaste etäopiskelemisessa?").get(0)));
+			
+			vastausrepository.save(new Vastaus("Olen tyytyväinen koulun tarjoamaan etäopetuksen laatuun", kysymysrepository.findByKysymysteksti("Oletko tyytyväinen koulun tarjoamaan etäopetuksen laatuun?").get(0)));
+			vastausrepository.save(new Vastaus("Olen erittäin tyytyväinen koulun tarjoamaan etäopetuksen laatuun", kysymysrepository.findByKysymysteksti("Oletko tyytyväinen koulun tarjoamaan etäopetuksen laatuun?").get(0)));
+			vastausrepository.save(new Vastaus("Koulun tarjoama etäopetus voisi olla laadukkaampaakin", kysymysrepository.findByKysymysteksti("Oletko tyytyväinen koulun tarjoamaan etäopetuksen laatuun?").get(0)));
+			
+			vastausrepository.save(new Vastaus("En haluaisi jatkaa etäopiskelua jatkossa", kysymysrepository.findByKysymysteksti("Haluaisitko jatkaa etäopiskelemisesta vielä jatkossakin?").get(0)));
+			vastausrepository.save(new Vastaus("Haluaisin jatkaa etäopiskelua jatkossa", kysymysrepository.findByKysymysteksti("Haluaisitko jatkaa etäopiskelemisesta vielä jatkossakin?").get(0)));
+			vastausrepository.save(new Vastaus("Voisin ottaa yksittäisiä etäopintokursseja jatkossakin", kysymysrepository.findByKysymysteksti("Haluaisitko jatkaa etäopiskelemisesta vielä jatkossakin?").get(0)));
+			
 		};
 	}
 }

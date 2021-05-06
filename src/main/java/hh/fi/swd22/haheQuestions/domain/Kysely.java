@@ -17,14 +17,21 @@ public class Kysely {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long kysely_id;
-	
+	private String kysely_kuvaus;
 	private String nimi;
 	
 	@JsonIgnoreProperties("kysely")
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "kysely")
 	private List<Kysymys> kysymykset;
 
+	
 	// konstruktorit
+	public Kysely(String nimi, String kysely_kuvaus) {
+		super();
+		this.nimi = nimi;
+		this.kysely_kuvaus = kysely_kuvaus;
+	}
+	
 	public Kysely(String nimi) {
 		super();
 		this.nimi = nimi;
@@ -33,6 +40,7 @@ public class Kysely {
 	public Kysely() {
 		super();
 		this.nimi = null;
+		this.kysely_kuvaus = null;
 	}
 
 	// getterit ja setterit
@@ -60,10 +68,19 @@ public class Kysely {
 		this.kysymykset = kysymykset;
 	}
 
+	public String getKysely_kuvaus() {
+		return kysely_kuvaus;
+	}
+
+	public void setKysely_kuvaus(String kysely_kuvaus) {
+		this.kysely_kuvaus = kysely_kuvaus;
+	}
+
 	// toString
 	@Override
 	public String toString() {
-		return "Kysely [kysely_id=" + kysely_id + ", nimi=" + nimi + "]";
+		return "Kysely [kysely_id=" + kysely_id + ", kysely_kuvaus=" + kysely_kuvaus + ", nimi=" + nimi
+				+ ", kysymykset=" + kysymykset + "]";
 	}
-
+	
 }

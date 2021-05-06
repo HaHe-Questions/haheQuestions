@@ -5,11 +5,12 @@
 <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
 </head>
 <body>
-<h2>Kysymykset</h2>
+<h2>Lisää kysymys</h2>
 <div>
 	<form th:object="${kysymys}" th:action="@{tallennakysymys}" action="#" method="post">
-	<label for="kysymysteksti">Kysymys</label>
-	<input type="text" id="kysymysteksti" th:field="*{kysymysteksti}" /><br>
+	<p>Kysymys:</p>
+	<textarea rows="10" cols="50" id="kysymysteksti" th:field="*{kysymysteksti}">
+	</textarea><br>
 
 	<label for="kysely">Kysely:</label>
 	<select id="kysely" th:field="*{kysely}">
