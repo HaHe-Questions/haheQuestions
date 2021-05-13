@@ -33,5 +33,12 @@ public class VastausController {
 		kysymys.setKysymys_id(kId);
 		return (List<Vastaus>) vastausrepository.findByKysymys(kysymys);
 	}
+	
+	// Tallenna uusi vastaus
+	@RequestMapping(value="/tallennavastaus", method = RequestMethod.POST)
+	public String tallennaVastaus(Vastaus vastaus) {
+		vastausrepository.save(vastaus);
+		return "redirect:vastaukset";
+	}
 
 }
