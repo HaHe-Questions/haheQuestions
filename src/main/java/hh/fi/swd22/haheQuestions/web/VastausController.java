@@ -41,5 +41,12 @@ public class VastausController {
 		vastausrepository.save(vastaus);
 		return vastaus;
 	}
+	
+	// Rest metodi - tallenna monta uutta vastausta
+	@RequestMapping(value="/tallennavastaukset", method = RequestMethod.POST)
+	public @ResponseBody List<Vastaus> tallennaVastaukset(@RequestBody List<Vastaus> vastaukset) {
+		vastausrepository.saveAll(vastaukset);
+		return vastaukset;
+	}
 
 }

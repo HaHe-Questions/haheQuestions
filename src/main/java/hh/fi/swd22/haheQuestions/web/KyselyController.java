@@ -47,8 +47,6 @@ public class KyselyController {
     	return kyselyrepository.findById(kId);
     } 
     
-    
-	
 	// Lisää uusi kysely
 	@RequestMapping(value="/uusikysely")
 	public String uusiKysely(Model model) {
@@ -77,8 +75,5 @@ public class KyselyController {
 		kysymysrepository.save(kysymys);
 		return "redirect:kyselylista";
 	}
-	
-
-	
 
 }
